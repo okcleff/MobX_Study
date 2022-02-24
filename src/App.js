@@ -1,12 +1,11 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React, { Component } from "react";
+import BookList from "./components/BookList";
+import Books from "./static_data/Books";
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Hello MobX</h1>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return <BookList books={Books} />;
+  }
 }
 
 export default App;
