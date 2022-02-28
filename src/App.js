@@ -1,15 +1,20 @@
 import React, { Component } from "react";
 import BookList from "./components/BookList";
-import Counter from "./components/Counter";
+import SearchBar from "./components/SearchBar";
 import Books from "./static_data/Books";
+import { Container, Grid } from "@mui/material";
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <BookList books={Books} />
-        <Counter />
-      </div>
+      <Container>
+        <SearchBar />
+        <Grid Container spacing={2}>
+          <Grid item>
+            <BookList books={Books} />
+          </Grid>
+        </Grid>
+      </Container>
     );
   }
 }
