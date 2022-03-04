@@ -4,9 +4,15 @@ import { List } from "@mui/material";
 
 class BookList extends Component {
   render() {
-    const { books } = this.props;
+    const { books, onSelectedBook } = this.props;
     const bookItems = books.map((book) => {
-      return <BookListItem book={book} key={book.ISBN} />;
+      return (
+        <BookListItem
+          book={book}
+          key={book.ISBN}
+          onSelectedBook={onSelectedBook}
+        />
+      );
     });
 
     return <List>{bookItems}</List>;

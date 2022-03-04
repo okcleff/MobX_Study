@@ -3,6 +3,9 @@ import { Paper, Grid, Typography, ListItem } from "@mui/material";
 import { withStyles } from "@mui/styles";
 
 const styles = {
+  listItem: {
+    "&:hover": { cursor: "pointer" },
+  },
   image: {
     width: 80,
     height: 100,
@@ -14,9 +17,13 @@ const styles = {
 
 class BookListItem extends Component {
   render() {
-    const { book, classes } = this.props;
+    const { book, classes, onSelectedBook } = this.props;
+
     return (
-      <ListItem>
+      <ListItem
+        className={classes.listItem}
+        onClick={() => onSelectedBook(book)}
+      >
         <Paper>
           <Grid container spacing={2}>
             <Grid item>
@@ -31,7 +38,7 @@ class BookListItem extends Component {
                 {book.title}
               </Typography>
               <Typography gutterBottom>{book.author}</Typography>
-              <Typography color="textSecondary">{book.introduce}</Typography>
+              {/* <Typography color="textSecondary">{book.introduce}</Typography> */}
             </Grid>
           </Grid>
         </Paper>

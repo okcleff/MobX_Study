@@ -4,6 +4,8 @@ import { Search } from "@mui/icons-material";
 
 export default class SearchBar extends Component {
   render() {
+    const { onSearchTitle } = this.props;
+
     return (
       <TextField
         InputProps={{
@@ -13,6 +15,7 @@ export default class SearchBar extends Component {
             </InputAdornment>
           ),
         }}
+        onChange={(e) => onSearchTitle(e.target.value)}
       />
     );
   }
