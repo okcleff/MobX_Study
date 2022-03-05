@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import BookList from "./components/BookList";
 import SearchBar from "./components/SearchBar";
 import BookDetail from "./components/BookDetail";
+import UserList from "./components/UserList";
 import Books from "./static_data/Books";
 import { Container, Grid } from "@mui/material";
 
@@ -36,6 +37,7 @@ class App extends Component {
 
     return (
       <Container>
+        <UserList title="UserList" />
         <SearchBar onSearchTitle={this.onSearchTitle.bind(this)} />
         <Grid container spacing={2}>
           <Grid item>
